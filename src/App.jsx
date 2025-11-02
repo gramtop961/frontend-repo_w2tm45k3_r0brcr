@@ -1,28 +1,28 @@
-import { useState } from 'react'
+import React from 'react';
+import Header from './components/Header';
+import Hero from './components/Hero';
+import NewsSection from './components/NewsSection';
+import Schedule from './components/Schedule';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center">
-      <div className="bg-white p-8 rounded-lg shadow-lg">
-        <h1 className="text-3xl font-bold text-gray-800 mb-4">
-          Vibe Coding Platform
-        </h1>
-        <p className="text-gray-600 mb-6">
-          Your AI-powered development environment
-        </p>
-        <div className="text-center">
-          <button
-            onClick={() => setCount(count + 1)}
-            className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded"
-          >
-            Count is {count}
-          </button>
+    <div className="min-h-screen bg-white text-gray-900">
+      <Header />
+      <main>
+        <Hero />
+        <NewsSection />
+        <Schedule />
+      </main>
+      <footer className="py-8 border-t border-red-100 bg-white">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p className="text-sm text-gray-600">© {new Date().getFullYear()} Ferrari F1 Fan Hub — Built for the Tifosi.</p>
+          <div className="text-sm text-gray-600">
+            Unofficial fan site. Not affiliated with Scuderia Ferrari or Formula 1.
+          </div>
         </div>
-      </div>
+      </footer>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
